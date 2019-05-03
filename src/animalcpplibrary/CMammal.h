@@ -3,7 +3,7 @@
 class CMammal {
 
 public:
-    CMammal();
+    CMammal(){}
 
     virtual ~CMammal(){}
 
