@@ -6,7 +6,7 @@
 cimport c_dog
 
 cdef class PyMammal:
-    cdef c_cat.CMammal* thisptr
+    cdef c_dog.CMammal* thisptr
 
     def run(self):
         if self.thisptr:
@@ -18,7 +18,7 @@ cdef class PyDog(PyMammal):
         if self.thisptr:
             del self.thisptr
         print('cinit Dog: allocating instance.')
-        self.thisptr = new c_cat.CDog()
+        self.thisptr = new c_dog.CDog()
 
     def __dealloc__(self):
         if self.thisptr:
@@ -27,4 +27,4 @@ cdef class PyDog(PyMammal):
 
     def eat(self):
         if self.thisptr:
-            (<c_cat.CDog*>self.thisptr).eat()
+            (<c_dog.CDog*>self.thisptr).eat()
