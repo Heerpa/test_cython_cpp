@@ -1,13 +1,13 @@
 #include "CCat.h"
 
 CCat::CCat() : CMammal() {
-    cout << "Cat being born."
+    std::cout << "Cat being born.";
 }
 
 CCat::~CCat() {
-    cout << "Cat dying."
+    std::cout << "Cat dying.";
 }
 
 void CCat::eat() {
-    cout << "Cat eating mice."
+    std::cout << "Cat eating mice.";
 }

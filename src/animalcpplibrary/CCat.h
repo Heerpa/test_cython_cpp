@@ -1,4 +1,4 @@
-#include <iostream.h>
+#include <iostream>
 #include "CMammal.h"
 
 
@@ -13,4 +13,4 @@ public:
 protected:
 
 private:
-}
+};

@@ -1,4 +1,4 @@
-#include <iostream.h>
+#include <iostream>
 
 class CMammal {
 
@@ -14,4 +14,4 @@ public:
 protected:
 
 private:
-}
+};
