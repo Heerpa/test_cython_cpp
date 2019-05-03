@@ -11,6 +11,7 @@ setup(
     ext_modules=cythonize(
         [
          Extension("animals.cat", ["src/cat.pyx"]),
+         Extension("animals.dog", ["src/dog.pyx"]),
          ]),
     include_package_data=True,
     zip_safe=False,
