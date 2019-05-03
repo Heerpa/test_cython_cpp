@@ -6,7 +6,7 @@
 cimport c_mammal
 
 cdef class PyMammal:
-    cdef c_cat.CMammal* thisptr
+    cdef c_mammal.CMammal* thisptr
 
     def run(self):
         if self.thisptr:

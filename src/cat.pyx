@@ -4,10 +4,10 @@
 # cython: language_level=3
 
 cimport c_cat
-import mammal
+# from mammal import PyMammal
+from mammal cimport PyMammal
 
-
-cdef class PyCat(mammal.PyMammal):
+cdef class PyCat(PyMammal):
     def __cinit__(self):
         if self.thisptr:
             del self.thisptr

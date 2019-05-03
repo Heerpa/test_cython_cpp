@@ -3,10 +3,11 @@
 # distutils: include_dirs = src/animalcpplibrary/
 # cython: language_level=3
 
-import mammal
+cimport c_dog
+from mammal cimport PyMammal
 
 
-cdef class PyDog(mammal.PyMammal):
+cdef class PyDog(PyMammal):
     def __cinit__(self):
         if self.thisptr:
             del self.thisptr
