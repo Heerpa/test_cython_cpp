@@ -1,14 +1,22 @@
-# distutils: sources = src/animalcpplibrary/CCat.cpp
+# distutils: sources = [src/animalcpplibrary/CCat.cpp, src/animalcpplibrary/CMammal.cpp]
 # distutils: language = c++
 # distutils: include_dirs = src/animalcpplibrary/
 # cython: language_level=3
 
 cimport c_cat
 
-cdef class PyCat:
-    cdef c_cat.CCat* thisptr
+cdef class PyMammal:
+    cdef c_cat.CMammal* thisptr
 
+    def run(self):
+        if self.thisptr:
+            self.thisptr.run()
+
+
+cdef class PyCat(PyMammal):
     def __cinit__(self):
+        if self.thisptr:
+            del self.thisptr
         print('cinit Cat: allocating instance.')
         self.thisptr = new c_cat.CCat()
 
@@ -19,4 +27,4 @@ cdef class PyCat:
 
     def eat(self):
         if self.thisptr:
-            self.thisptr.eat()
+            (<c_cat.CCat*>self.thisptr).eat()
