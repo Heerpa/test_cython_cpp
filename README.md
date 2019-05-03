@@ -8,11 +8,12 @@ CCat and CDog classes.
 
 # issues:
 - multiple includes:
-  - with the naive c++-setup: CCat.h includes CMammal.h in order for CCat to inherit CMammal
-  - c_mammal.pxd includes CMammal.h
-  - c_cat.pxd includes CCat.h
-  - -> CMammal.h is included twice, so the compiler complains about multiple definitions of CMammal
-  - one way to avoid this would be to
+  - with the naive c++-setup:  (this is Commit: a0876b43af3f9a53c62e779ed77b306cf6d2256f)
+    - CCat.h includes CMammal.h in order for CCat to inherit CMammal
+    - c_mammal.pxd includes CMammal.h
+    - c_cat.pxd includes CCat.h
+    - -> CMammal.h is included twice, so the compiler complains about multiple definitions of CMammal
+  - one way to avoid this would be to (this is Commit: 97eeee45ccf103574ae454bef833b5a23c46bf4a)
     - define it together with CCat in the "cdef extern from 'CCat.h'" block of c_cat.pxd. as CCat.h includes CMammal.h, we have access to it here and avoid the multiple definitions above
     - and do the same with the Dog. So, we need to copy all Cython-Mammal code to all inheriting classes.
   - -> are there alternatives?
