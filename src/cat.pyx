@@ -1,19 +1,13 @@
-# distutils: sources = [src/animalcpplibrary/CCat.cpp, src/animalcpplibrary/CMammal.cpp]
+# distutils: sources = [src/animalcpplibrary/CCat.cpp]
 # distutils: language = c++
 # distutils: include_dirs = src/animalcpplibrary/
 # cython: language_level=3
 
 cimport c_cat
-
-cdef class PyMammal:
-    cdef c_cat.CMammal* thisptr
-
-    def run(self):
-        if self.thisptr:
-            self.thisptr.run()
+import mammal
 
 
-cdef class PyCat(PyMammal):
+cdef class PyCat(mammal.PyMammal):
     def __cinit__(self):
         if self.thisptr:
             del self.thisptr

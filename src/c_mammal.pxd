@@ -1,3 +1,3 @@
-# cdef extern from 'CMammal.h':
-#     cdef cppclass CMammal:
-#         void run()
+cdef extern from 'CMammal.h':
+    cdef cppclass CMammal:
+        void run()
