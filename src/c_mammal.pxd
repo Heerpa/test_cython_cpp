@@ -1,3 +1,3 @@
-cdef extern from 'animnalcpplibrary/CMammal.h':
+cdef extern from 'CMammal.h':
     cdef cppclass CMammal:
         void run()

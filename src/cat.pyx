@@ -1,6 +1,6 @@
-# distutils: sources = [src/animalcpplibrary/CCat.cpp]
+# distutils: sources = src/animalcpplibrary/CCat.cpp
 # distutils: language = c++
-# distutils: include_dirs = src/animalcpplibrary
+# distutils: include_dirs = src/animalcpplibrary/
 # cython: language_level=3
 
 cimport c_cat
@@ -10,7 +10,7 @@ cdef class Cat:
 
     def __cinit__(self):
         print('cinit Cat: allocating instance.')
-        self.thisptr = new c_+cat.CCat()
+        self.thisptr = new c_cat.CCat()
 
     def __dealloc__(self):
         if self.thisptr:
