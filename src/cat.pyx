@@ -5,7 +5,7 @@
 
 cimport c_cat
 
-cdef class Cat:
+cdef class PyCat:
     cdef c_cat.CCat* thisptr
 
     def __cinit__(self):
